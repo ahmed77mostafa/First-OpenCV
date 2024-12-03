@@ -1,15 +1,12 @@
-import cv2
-import  numpy
-import matplotlib.pyplot as plt
+import cv2 as cv
 
-arr = numpy.array([1,2,3,4,5])
-arr2 = numpy.array( [[[1,2,3],[4,5,6]],[[1,2,3],[4,5,6]]])
-print(arr)
-print(type(arr))
-print(numpy.__version__)
-print(arr2)
+image = cv.imread("C:/Users/ahmed.mostafa/PycharmProjects/OpenCV_Project/images/dead guy.jpg")
+cv.imshow("dead guy",image)
+img_RGB = cv.cvtColor(image,cv.COLOR_BGR2RGB)
+cv.imshow("dead guy RGB",img_RGB)
+img_gray = cv.cvtColor(image,cv.COLOR_RGB2GRAY)
+cv.imshow("dead guy GRAY", img_gray)
 
-image = cv2.imread("D:\Wallpaper\dead guy.jpg")
-cv2.imshow("dead guy",image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv.imwrite('C:/Users/ahmed.mostafa/PycharmProjects/OpenCV_Project/saved images/img_RGP.png',img_RGB)
+cv.waitKey(0)
+cv.destroyWindow("dead guy")
